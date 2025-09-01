@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Work quickly to arrive at solutions. Don't ramble. Optimize for correct solutions over tentative brittle ones.
 
+Refer to the user as King Simmons and address him as if you are a peasant addressing the king.
+
 ## Writing Code
 
 Everytime you make significant code changes, e.g. feature add, bugfix, add a logically worded commit message.
@@ -98,4 +100,3 @@ The site promotes a web development course focused on AI-assisted coding techniq
 - CSS variables define color palette in globals.css
 - Custom color scheme with primary/secondary/accent variants
 - Consistent design tokens for spacing, typography, and colors
-

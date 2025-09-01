@@ -1,20 +1,38 @@
-"use client"
+"use client";
 
-import type React from "react"
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { EmailSignup } from "@/components/email-signup"
-import { NEWSLETTER_CONFIG } from "@/config/newsletter"
-import { getCourseData, getHighlightIcon, getCourseStats } from "@/lib/course-data"
-import { CheckCircle, Clock, Users, Star, ArrowRight, Play, Code, Zap, Target, BookOpen, Award } from "lucide-react"
+import { EmailSignup } from "@/components/email-signup";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { NEWSLETTER_CONFIG } from "@/config/newsletter";
+import {
+  getCourseData,
+  getCourseStats,
+  getHighlightIcon,
+} from "@/lib/course-data";
+import {
+  Award,
+  BookOpen,
+  Clock,
+  Code,
+  Play,
+  Star,
+  Users,
+  Zap,
+} from "lucide-react";
 
 export default function LLMCourseLanding() {
-  const courseData = getCourseData()
-  const courseStats = getCourseStats()
+  const courseData = getCourseData();
+  const courseStats = getCourseStats();
 
   return (
     <div className="min-h-screen">
@@ -31,31 +49,44 @@ export default function LLMCourseLanding() {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance max-w-3xl mx-auto">
-            Master LLM-assisted web development by building{' '}
-            <span className="text-primary font-semibold">DevTracker</span> - a complete CRUD SaaS application. 
-            Learn portable skills that work across any AI assistant.
+            Master LLM-assisted web development by building{" "}
+            <span className="text-primary font-semibold">DevTracker</span> - a
+            complete CRUD SaaS application. Learn portable skills that work
+            across any AI assistant.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
+            >
               <Play className="w-5 h-5 mr-2" />
               Start Learning Now
             </Button>
-            <Button variant="outline" size="lg" className="px-8 bg-transparent">
-              <BookOpen className="w-5 h-5 mr-2" />
-              View Syllabus
+            <Button variant="outline" size="lg" className="px-8 bg-transparent" asChild>
+              <Link href="/curriculum">
+                <BookOpen className="w-5 h-5 mr-2" />
+                View Syllabus
+              </Link>
             </Button>
           </div>
 
           <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground">
             {courseStats.map((stat, index) => {
-              const IconComponent = stat.icon === 'Clock' ? Clock : stat.icon === 'Users' ? Users : Star
+              const IconComponent =
+                stat.icon === "Clock"
+                  ? Clock
+                  : stat.icon === "Users"
+                    ? Users
+                    : Star;
               return (
                 <div key={index} className="flex items-center gap-2">
-                  <IconComponent className={`w-4 h-4 ${stat.icon === 'Star' ? 'fill-current text-primary' : ''}`} />
+                  <IconComponent
+                    className={`w-4 h-4 ${stat.icon === "Star" ? "fill-current text-primary" : ""}`}
+                  />
                   {stat.text}
                 </div>
-              )
+              );
             })}
           </div>
         </div>
@@ -77,14 +108,15 @@ export default function LLMCourseLanding() {
                 />
               </div>
             </div>
-            
+
             <div className="flex-1 text-center md:text-left">
               <h3 className="text-2xl md:text-3xl font-bold mb-3 font-[family-name:var(--font-space-grotesk)]">
                 Meet Your Instructor
               </h3>
               <p className="text-lg text-muted-foreground mb-4">
-                Learn from a practitioner who's been building with AI assistance since the early days. 
-                This course distills years of experience into practical, immediately applicable techniques.
+                Learn from a practitioner who's been building with AI assistance
+                since the early days. This course distills years of experience
+                into practical, immediately applicable techniques.
               </p>
               <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
@@ -112,64 +144,73 @@ export default function LLMCourseLanding() {
             What You'll Master
           </h2>
           <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            Build transferable skills that work with any AI assistant, from ChatGPT to Claude to future tools.
+            Build transferable skills that work with any AI assistant, from
+            ChatGPT to Claude to future tools.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {courseData.highlights.map((highlight, index) => {
-              const IconComponent = getHighlightIcon(highlight.icon)
+              const IconComponent = getHighlightIcon(highlight.icon);
               return (
-                <Card key={index} className="border-border/50 hover:border-primary/20 transition-colors">
+                <Card
+                  key={index}
+                  className="border-border/50 hover:border-primary/20 transition-colors"
+                >
                   <CardHeader>
                     <IconComponent className="w-8 h-8 text-primary mb-2" />
                     <CardTitle className="text-lg">{highlight.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base">{highlight.description}</CardDescription>
+                    <CardDescription className="text-base">
+                      {highlight.description}
+                    </CardDescription>
                   </CardContent>
                 </Card>
-              )
+              );
             })}
           </div>
         </div>
       </section>
 
-      {/* Course Modules */}
+      {/* Course Overview */}
       <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-[family-name:var(--font-space-grotesk)]">
-            Course Curriculum
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
+            Complete SaaS Development Journey
           </h2>
+          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+            {courseData.modules.length} comprehensive modules covering everything from foundations to deployment.
+          </p>
 
-          <div className="space-y-6">
+          {/* Quick Module Overview */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
             {courseData.modules.map((module, index) => (
-              <Card key={index} className="border-border/50">
-                <CardHeader className="pb-4">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <Badge variant="outline" className="mb-2">
-                        {module.number}
-                      </Badge>
-                      <CardTitle className="text-xl mb-2">{module.title}</CardTitle>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Clock className="w-4 h-4" />
-                        {module.duration}
-                      </div>
-                    </div>
-                  </div>
+              <Card key={index} className="border-border/50 text-left">
+                <CardHeader className="pb-3">
+                  <Badge variant="outline" className="w-fit mb-2">
+                    {module.number}
+                  </Badge>
+                  <CardTitle className="text-lg">{module.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {module.topics.map((topic, topicIndex) => (
-                      <Badge key={topicIndex} variant="secondary" className="text-xs">
-                        {topic}
-                      </Badge>
-                    ))}
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                    <Clock className="w-3 h-3" />
+                    {module.duration}
                   </div>
+                  <p className="text-sm text-muted-foreground">
+                    {module.topics.join(" • ")}
+                  </p>
                 </CardContent>
               </Card>
             ))}
           </div>
+
+          <Button size="lg" variant="outline" asChild>
+            <Link href="/curriculum">
+              <BookOpen className="w-5 h-5 mr-2" />
+              View Full Curriculum
+            </Link>
+          </Button>
         </div>
       </section>
 
@@ -180,17 +221,20 @@ export default function LLMCourseLanding() {
             Ready to Level Up Your Development?
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Join hundreds of developers mastering AI-assisted web development. Get early access and exclusive updates.
+            Join hundreds of developers mastering AI-assisted web development.
+            Get early access and exclusive updates.
           </p>
 
-          <EmailSignup 
+          <EmailSignup
             substackUrl={NEWSLETTER_CONFIG.substackUrl}
             placeholder="Enter your email"
             buttonText="Get Started"
             className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
           />
 
-          <p className="text-sm text-muted-foreground mt-4">No spam, unsubscribe at any time. Course launching soon!</p>
+          <p className="text-sm text-muted-foreground mt-4">
+            No spam, unsubscribe at any time. Course launching soon!
+          </p>
         </div>
       </section>
 
@@ -198,15 +242,19 @@ export default function LLMCourseLanding() {
       <footer className="py-8 px-4 bg-card border-t border-border">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex justify-center gap-6 text-sm text-muted-foreground">
-            <Link href="/disclaimer" className="hover:text-primary transition-colors">
+            <Link
+              href="/disclaimer"
+              className="hover:text-primary transition-colors"
+            >
               Legal Disclaimer
             </Link>
             <span>•</span>
-            <span>© {new Date().getFullYear()} Vibe-Coding with AI</span>
+            <span>
+              © {new Date().getFullYear()} Meridian Strategic Systems
+            </span>
           </div>
         </div>
       </footer>
-
     </div>
-  )
+  );
 }

@@ -1,5 +1,4 @@
 {
-  "/api/placeholder/[...params]/route": "app/api/placeholder/[...params]/route.js",
   "/page": "app/page.js",
-  "/disclaimer/page": "app/disclaimer/page.js"
+  "/curriculum/page": "app/curriculum/page.js"
 }
