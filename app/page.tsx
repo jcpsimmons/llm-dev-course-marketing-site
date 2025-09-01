@@ -1,24 +1,20 @@
 "use client"
 
 import type React from "react"
+import Image from "next/image"
+import Link from "next/link"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
+import { EmailSignup } from "@/components/email-signup"
+import { NEWSLETTER_CONFIG } from "@/config/newsletter"
+import { getCourseData, getHighlightIcon, getCourseStats } from "@/lib/course-data"
 import { CheckCircle, Clock, Users, Star, ArrowRight, Play, Code, Zap, Target, BookOpen, Award } from "lucide-react"
 
 export default function LLMCourseLanding() {
-  const [email, setEmail] = useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const handleEmailSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle email submission here
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
-  }
+  const courseData = getCourseData()
+  const courseStats = getCourseStats()
 
   return (
     <div className="min-h-screen">
@@ -35,8 +31,9 @@ export default function LLMCourseLanding() {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance max-w-3xl mx-auto">
-            Master LLM-assisted web development with portable skills that work across any AI assistant. Build
-            professional applications while learning future-proof techniques.
+            Master LLM-assisted web development by building{' '}
+            <span className="text-primary font-semibold">DevTracker</span> - a complete CRUD SaaS application. 
+            Learn portable skills that work across any AI assistant.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -51,17 +48,58 @@ export default function LLMCourseLanding() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              6-8 Hours Content
+            {courseStats.map((stat, index) => {
+              const IconComponent = stat.icon === 'Clock' ? Clock : stat.icon === 'Users' ? Users : Star
+              return (
+                <div key={index} className="flex items-center gap-2">
+                  <IconComponent className={`w-4 h-4 ${stat.icon === 'Star' ? 'fill-current text-primary' : ''}`} />
+                  {stat.text}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Instructor Section */}
+      <section className="py-16 px-4 bg-card/50">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-shrink-0">
+              <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-4 ring-primary/20">
+                <Image
+                  src="/api/placeholder/160/160"
+                  alt="Course Instructor"
+                  width={160}
+                  height={160}
+                  className="object-cover w-full h-full bg-gradient-to-br from-primary/20 to-primary/10"
+                  priority={false}
+                />
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <Users className="w-4 h-4" />
-              500+ Students
-            </div>
-            <div className="flex items-center gap-2">
-              <Star className="w-4 h-4 fill-current text-primary" />
-              4.9/5 Rating
+            
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 font-[family-name:var(--font-space-grotesk)]">
+                Meet Your Instructor
+              </h3>
+              <p className="text-lg text-muted-foreground mb-4">
+                Learn from a practitioner who's been building with AI assistance since the early days. 
+                This course distills years of experience into practical, immediately applicable techniques.
+              </p>
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-primary" />
+                  10+ Years Development
+                </div>
+                <div className="flex items-center gap-2">
+                  <Code className="w-4 h-4 text-primary" />
+                  AI-First Workflow Pioneer
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users className="w-4 h-4 text-primary" />
+                  Trusted by 500+ Developers
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -78,49 +116,20 @@ export default function LLMCourseLanding() {
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Code,
-                title: "AI-Assisted Development",
-                description: "Learn collaborative coding techniques that amplify your productivity with any AI tool.",
-              },
-              {
-                icon: Target,
-                title: "Vibe-Coding Philosophy",
-                description:
-                  "Master the art of intuitive development that goes beyond copy-paste to true collaboration.",
-              },
-              {
-                icon: Zap,
-                title: "Modern Web Stack",
-                description: "Build with HTML5, CSS3, JavaScript ES6+, and modern frameworks using AI assistance.",
-              },
-              {
-                icon: CheckCircle,
-                title: "Quality Assurance",
-                description: "Implement testing, debugging, and optimization strategies with AI-powered workflows.",
-              },
-              {
-                icon: Award,
-                title: "Portfolio Project",
-                description: "Create a professional marketing page (like this one!) as your capstone project.",
-              },
-              {
-                icon: ArrowRight,
-                title: "Career Development",
-                description: "Build a developer brand and network in the AI-assisted development community.",
-              },
-            ].map((feature, index) => (
-              <Card key={index} className="border-border/50 hover:border-primary/20 transition-colors">
-                <CardHeader>
-                  <feature.icon className="w-8 h-8 text-primary mb-2" />
-                  <CardTitle className="text-lg">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">{feature.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+            {courseData.highlights.map((highlight, index) => {
+              const IconComponent = getHighlightIcon(highlight.icon)
+              return (
+                <Card key={index} className="border-border/50 hover:border-primary/20 transition-colors">
+                  <CardHeader>
+                    <IconComponent className="w-8 h-8 text-primary mb-2" />
+                    <CardTitle className="text-lg">{highlight.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base">{highlight.description}</CardDescription>
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -133,50 +142,13 @@ export default function LLMCourseLanding() {
           </h2>
 
           <div className="space-y-6">
-            {[
-              {
-                module: "Module 1",
-                title: "Foundations & Mindset",
-                duration: "45 minutes",
-                topics: ["Vibe-Coding Philosophy", "Tool-Agnostic Principles", "Environment Setup"],
-              },
-              {
-                module: "Module 2",
-                title: "Project Foundation",
-                duration: "90 minutes",
-                topics: ["AI-Assisted Planning", "Semantic HTML", "Modern CSS", "JavaScript Fundamentals"],
-              },
-              {
-                module: "Module 3",
-                title: "Advanced Styling & Interactivity",
-                duration: "75 minutes",
-                topics: ["CSS Grid & Flexbox", "Interactive Components", "Performance Optimization"],
-              },
-              {
-                module: "Module 4",
-                title: "Modern Development Workflow",
-                duration: "60 minutes",
-                topics: ["Build Tools", "Testing & QA", "Deployment & DevOps"],
-              },
-              {
-                module: "Module 5",
-                title: "Debugging & Maintenance",
-                duration: "45 minutes",
-                topics: ["AI-Assisted Debugging", "Code Refactoring", "Documentation"],
-              },
-              {
-                module: "Module 6",
-                title: "Portfolio & Career",
-                duration: "45 minutes",
-                topics: ["Portfolio Presentation", "Scaling Skills", "Professional Development"],
-              },
-            ].map((module, index) => (
+            {courseData.modules.map((module, index) => (
               <Card key={index} className="border-border/50">
                 <CardHeader className="pb-4">
                   <div className="flex justify-between items-start">
                     <div>
                       <Badge variant="outline" className="mb-2">
-                        {module.module}
+                        {module.number}
                       </Badge>
                       <CardTitle className="text-xl mb-2">{module.title}</CardTitle>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -211,52 +183,30 @@ export default function LLMCourseLanding() {
             Join hundreds of developers mastering AI-assisted web development. Get early access and exclusive updates.
           </p>
 
-          <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="flex-1"
-            />
-            <Button type="submit" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              {isSubmitted ? (
-                <>
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  Subscribed!
-                </>
-              ) : (
-                <>
-                  Get Started
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </>
-              )}
-            </Button>
-          </form>
+          <EmailSignup 
+            substackUrl={NEWSLETTER_CONFIG.substackUrl}
+            placeholder="Enter your email"
+            buttonText="Get Started"
+            className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+          />
 
           <p className="text-sm text-muted-foreground mt-4">No spam, unsubscribe at any time. Course launching soon!</p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 bg-card border-t border-border">
+      <footer className="py-8 px-4 bg-card border-t border-border">
         <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">Vibe-Coding with AI</h3>
-          <p className="text-muted-foreground mb-6">Building portable skills for modern development</p>
           <div className="flex justify-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-primary transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="hover:text-primary transition-colors">
-              Contact
-            </a>
+            <Link href="/disclaimer" className="hover:text-primary transition-colors">
+              Legal Disclaimer
+            </Link>
+            <span>•</span>
+            <span>© {new Date().getFullYear()} Vibe-Coding with AI</span>
           </div>
         </div>
       </footer>
+
     </div>
   )
 }

@@ -2,9 +2,9 @@
 ## Building Portable Skills for Modern Development
 
 ### Course Overview
-**Duration:** 6-8 hours | **Format:** Video-based with screencasts | **Platform:** Udemy/Similar
+**Duration:** 8-10 hours | **Format:** Video-based with screencasts | **Platform:** Udemy/Similar
 
-This hands-on course teaches you how to leverage AI tools effectively for web development while building transferable skills that work across any AI assistant or coding environment. You'll learn by doing - starting with building the marketing page for this very course.
+This hands-on course teaches you how to leverage AI tools effectively for web development while building transferable skills that work across any AI assistant or coding environment. You'll learn by doing - building a complete CRUD SaaS application: **DevTracker**, a project management tool for developers to track tasks, time, and team collaboration.
 
 ---
 
@@ -26,117 +26,120 @@ This hands-on course teaches you how to leverage AI tools effectively for web de
 
 ---
 
-## Module 2: Project Kickoff - Marketing Page Foundation (90 minutes)
-### 2.1 Project Planning with AI (20 min)
-- Breaking down requirements collaboratively
-- Creating user stories and acceptance criteria
-- Architecture decisions and technology choices
+## Module 2: Project Planning & Foundation Setup (75 minutes)
+### 2.1 DevTracker Project Planning (20 min)
+- Breaking down SaaS requirements with AI
+- User stories for project management features
+- Database schema and API design decisions
 
-### 2.2 HTML Structure & Semantic Markup (25 min)
-- Building accessible, semantic HTML
-- AI-assisted content creation and structure
-- SEO-friendly markup patterns
+### 2.2 Next.js Setup & Architecture (20 min)
+- Project initialization with AI assistance
+- Folder structure and conventions
+- TypeScript configuration and best practices
 
-### 2.3 CSS Foundations & Design Systems (25 min)
-- Modern CSS techniques and best practices
-- Creating reusable components
-- Responsive design principles
+### 2.3 UI Foundation with shadcn/ui (20 min)
+- Component library setup and customization
+- Design system and theme configuration
+- Building reusable UI components
 
-### 2.4 JavaScript Fundamentals (20 min)
-- Modern ES6+ patterns
-- DOM manipulation and event handling
-- Progressive enhancement strategies
-
----
-
-## Module 3: Advanced Styling & Interactivity (75 minutes)
-### 3.1 Advanced CSS Techniques (25 min)
-- CSS Grid and Flexbox mastery
-- Animations and transitions
-- Custom properties and theming
-
-### 3.2 Interactive Components (25 min)
-- Form handling and validation
-- Modal dialogs and navigation
-- Scroll effects and micro-interactions
-
-### 3.3 Performance Optimization (25 min)
-- Image optimization and lazy loading
-- CSS and JavaScript minification
-- Core Web Vitals and lighthouse scores
+### 2.4 Authentication Setup (15 min)
+- User authentication strategy
+- Session management patterns
+- Protected routes and middleware
 
 ---
 
-## Module 4: Modern Development Workflow (60 minutes)
-### 4.1 Build Tools & Bundling (20 min)
-- Webpack/Vite configuration
-- Asset optimization pipelines
-- Development vs production builds
+## Module 3: Database & CRUD Operations (90 minutes)
+### 3.1 Database Setup with Prisma (25 min)
+- Schema design for projects and tasks
+- Database relationships and migrations
+- Prisma client setup and configuration
 
-### 4.2 Testing & Quality Assurance (20 min)
-- Unit testing with AI assistance
-- Integration testing strategies
-- Accessibility testing and validation
+### 3.2 API Routes & Server Actions (35 min)
+- Next.js API routes for CRUD operations
+- Server actions for form handling
+- Data validation with Zod schemas
 
-### 4.3 Deployment & DevOps (20 min)
-- Static site hosting options
-- CI/CD pipeline basics
-- Domain configuration and SSL
-
----
-
-## Module 5: AI-Assisted Debugging & Maintenance (45 minutes)
-### 5.1 Debugging Strategies (15 min)
-- Systematic bug identification
-- Using AI for error analysis
-- Browser dev tools mastery
-
-### 5.2 Code Refactoring (15 min)
-- Identifying improvement opportunities
-- Collaborative refactoring with AI
-- Maintaining code quality over time
-
-### 5.3 Documentation & Handoff (15 min)
-- Writing maintainable code documentation
-- Creating style guides and component libraries
-- Project handoff best practices
+### 3.3 Project Management Features (30 min)
+- Creating and organizing projects
+- Task creation, editing, and status updates
+- Real-time updates and optimistic UI
 
 ---
 
-## Module 6: Portfolio & Career Development (45 minutes)
-### 6.1 Portfolio Presentation (15 min)
-- Showcasing your project effectively
-- Writing compelling project descriptions
-- Technical storytelling skills
+## Module 4: Advanced Features & User Experience (85 minutes)
+### 4.1 Time Tracking & Analytics (30 min)
+- Building time tracking functionality
+- Dashboard with charts and insights
+- Data visualization with Recharts
 
-### 6.2 Scaling Your Skills (15 min)
-- Adapting techniques to different frameworks
-- Building a personal development workflow
-- Staying current with evolving AI tools
+### 4.2 Team Collaboration Features (30 min)
+- Team member invitations and roles
+- Comments and activity feeds
+- Real-time notifications system
 
-### 6.3 Professional Development (15 min)
-- Building a developer brand
-- Networking in the AI-assisted development community
-- Continuous learning strategies
+### 4.3 Search, Filters & Performance (25 min)
+- Advanced search and filtering
+- Pagination and infinite scroll
+- Performance optimization techniques
+
+---
+
+## Module 5: Testing, Deployment & Production (75 minutes)
+### 5.1 Testing Strategy with AI (25 min)
+- Unit testing React components
+- API route testing with Jest
+- E2E testing with Playwright
+
+### 5.2 Deployment & DevOps (25 min)
+- Vercel deployment with database
+- Environment variables and secrets
+- CI/CD pipeline setup
+
+### 5.3 Monitoring & Maintenance (25 min)
+- Error tracking and logging
+- Performance monitoring
+- User feedback and iteration cycles
+
+---
+
+## Module 6: SaaS Business & Career Growth (60 minutes)
+### 6.1 SaaS Monetization & Features (20 min)
+- Implementing subscription billing
+- Feature gating and user limits
+- Payment processing with Stripe
+
+### 6.2 Portfolio & Professional Presentation (20 min)
+- Showcasing your full-stack project
+- Technical case study creation
+- Interview preparation strategies
+
+### 6.3 Scaling & Future Development (20 min)
+- Adapting AI techniques to other frameworks
+- Building a sustainable development workflow
+- Community building and networking
 
 ---
 
 ## Course Deliverables
-- **Primary Project:** Fully functional marketing page with modern design
+- **Primary Project:** DevTracker - A complete CRUD SaaS application with authentication, database, and payment processing
+- **Secondary Projects:** 
+  - Course marketing page (warm-up project)
+  - Component library and design system
 - **Bonus Materials:** 
-  - Starter templates and boilerplates
-  - Curated resource lists
+  - Production deployment checklist
+  - SaaS starter template repository
   - Community Discord access
-- **Assessments:** Practical coding challenges and peer reviews
+- **Assessments:** Feature implementation challenges and code reviews
 
 ## Learning Outcomes
 By the end of this course, students will:
 1. Master AI-assisted development workflows that transfer across tools
-2. Build professional-quality web applications with confidence
-3. Develop debugging and problem-solving metaskills
-4. Create maintainable, scalable code architecture
-5. Understand modern web development best practices
-6. Build a portfolio project ready for professional presentation
+2. Build and deploy a complete full-stack SaaS application
+3. Implement authentication, databases, and payment systems
+4. Develop debugging and problem-solving metaskills with AI
+5. Create maintainable, scalable production-ready code
+6. Build a portfolio project that demonstrates real-world SaaS development skills
 
 ## Prerequisites
 - Basic HTML, CSS, and JavaScript knowledge

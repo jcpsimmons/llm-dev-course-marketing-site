@@ -1,0 +1,330 @@
+{
+  "title": "LLM-Assisted Web Development: Vibe-Coding with AI",
+  "subtitle": "Building Portable Skills for Modern Development",
+  "overview": {
+    "duration": "8-10 hours",
+    "format": "Video-based with screencasts",
+    "platform": "Udemy/Similar",
+    "description": "This hands-on course teaches you how to leverage AI tools effectively for web development while building transferable skills that work across any AI assistant or coding environment. You'll learn by doing - building a complete CRUD SaaS application: **DevTracker**, a project management tool for developers to track tasks, time, and team collaboration."
+  },
+  "primaryProject": {
+    "name": "DevTracker",
+    "description": "A complete CRUD SaaS application with authentication, database, and payment processing",
+    "features": [
+      "Project and task management",
+      "Time tracking and analytics",
+      "Team collaboration tools",
+      "User authentication and roles",
+      "Subscription billing integration"
+    ]
+  },
+  "stats": {
+    "duration": "8-10 Hours Content",
+    "students": "500+ Students",
+    "rating": "4.9/5 Rating"
+  },
+  "highlights": [
+    {
+      "title": "AI-Assisted Development",
+      "description": "Learn collaborative coding techniques that amplify your productivity with any AI tool.",
+      "icon": "Code"
+    },
+    {
+      "title": "Vibe-Coding Philosophy",
+      "description": "Master the art of intuitive development that goes beyond copy-paste to true collaboration.",
+      "icon": "Target"
+    },
+    {
+      "title": "Full-Stack SaaS Build",
+      "description": "Create a complete project management application with modern tech stack and best practices.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Production-Ready Skills",
+      "description": "Implement authentication, databases, payments, testing, and deployment strategies.",
+      "icon": "CheckCircle"
+    },
+    {
+      "title": "Portfolio Project",
+      "description": "Build DevTracker as your capstone - a real SaaS application for your professional portfolio.",
+      "icon": "Award"
+    },
+    {
+      "title": "Career Development",
+      "description": "Build a developer brand and network in the AI-assisted development community.",
+      "icon": "ArrowRight"
+    }
+  ],
+  "modules": [
+    {
+      "number": "Module 1",
+      "title": "Foundations & Mindset",
+      "duration": "45 minutes",
+      "topics": [
+        "Vibe-Coding Philosophy",
+        "Tool-Agnostic Principles",
+        "Environment Setup"
+      ],
+      "sections": [
+        {
+          "title": "The Vibe-Coding Philosophy",
+          "duration": "15 min",
+          "points": [
+            "What is vibe-coding and why it matters",
+            "Moving beyond copy-paste to collaborative development",
+            "Building intuition for AI-assisted workflows"
+          ]
+        },
+        {
+          "title": "Tool-Agnostic Principles",
+          "duration": "15 min",
+          "points": [
+            "Core metaskills that work with any AI assistant",
+            "Effective prompting patterns and communication",
+            "Understanding AI strengths and limitations"
+          ]
+        },
+        {
+          "title": "Setting Up Your Environment",
+          "duration": "15 min",
+          "points": [
+            "IDE setup and best practices",
+            "Version control integration",
+            "Browser dev tools essentials"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "Module 2",
+      "title": "Project Planning & Foundation Setup",
+      "duration": "75 minutes",
+      "topics": [
+        "DevTracker Project Planning",
+        "Next.js Setup & Architecture",
+        "UI Foundation with shadcn/ui",
+        "Authentication Setup"
+      ],
+      "sections": [
+        {
+          "title": "DevTracker Project Planning",
+          "duration": "20 min",
+          "points": [
+            "Breaking down SaaS requirements with AI",
+            "User stories for project management features",
+            "Database schema and API design decisions"
+          ]
+        },
+        {
+          "title": "Next.js Setup & Architecture",
+          "duration": "20 min",
+          "points": [
+            "Project initialization with AI assistance",
+            "Folder structure and conventions",
+            "TypeScript configuration and best practices"
+          ]
+        },
+        {
+          "title": "UI Foundation with shadcn/ui",
+          "duration": "20 min",
+          "points": [
+            "Component library setup and customization",
+            "Design system and theme configuration",
+            "Building reusable UI components"
+          ]
+        },
+        {
+          "title": "Authentication Setup",
+          "duration": "15 min",
+          "points": [
+            "User authentication strategy",
+            "Session management patterns",
+            "Protected routes and middleware"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "Module 3",
+      "title": "Database & CRUD Operations",
+      "duration": "90 minutes",
+      "topics": [
+        "Database Setup with Prisma",
+        "API Routes & Server Actions",
+        "Project Management Features"
+      ],
+      "sections": [
+        {
+          "title": "Database Setup with Prisma",
+          "duration": "25 min",
+          "points": [
+            "Schema design for projects and tasks",
+            "Database relationships and migrations",
+            "Prisma client setup and configuration"
+          ]
+        },
+        {
+          "title": "API Routes & Server Actions",
+          "duration": "35 min",
+          "points": [
+            "Next.js API routes for CRUD operations",
+            "Server actions for form handling",
+            "Data validation with Zod schemas"
+          ]
+        },
+        {
+          "title": "Project Management Features",
+          "duration": "30 min",
+          "points": [
+            "Creating and organizing projects",
+            "Task creation, editing, and status updates",
+            "Real-time updates and optimistic UI"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "Module 4",
+      "title": "Advanced Features & User Experience",
+      "duration": "85 minutes",
+      "topics": [
+        "Time Tracking & Analytics",
+        "Team Collaboration Features",
+        "Search, Filters & Performance"
+      ],
+      "sections": [
+        {
+          "title": "Time Tracking & Analytics",
+          "duration": "30 min",
+          "points": [
+            "Building time tracking functionality",
+            "Dashboard with charts and insights",
+            "Data visualization with Recharts"
+          ]
+        },
+        {
+          "title": "Team Collaboration Features",
+          "duration": "30 min",
+          "points": [
+            "Team member invitations and roles",
+            "Comments and activity feeds",
+            "Real-time notifications system"
+          ]
+        },
+        {
+          "title": "Search, Filters & Performance",
+          "duration": "25 min",
+          "points": [
+            "Advanced search and filtering",
+            "Pagination and infinite scroll",
+            "Performance optimization techniques"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "Module 5",
+      "title": "Testing, Deployment & Production",
+      "duration": "75 minutes",
+      "topics": [
+        "Testing Strategy with AI",
+        "Deployment & DevOps",
+        "Monitoring & Maintenance"
+      ],
+      "sections": [
+        {
+          "title": "Testing Strategy with AI",
+          "duration": "25 min",
+          "points": [
+            "Unit testing React components",
+            "API route testing with Jest",
+            "E2E testing with Playwright"
+          ]
+        },
+        {
+          "title": "Deployment & DevOps",
+          "duration": "25 min",
+          "points": [
+            "Vercel deployment with database",
+            "Environment variables and secrets",
+            "CI/CD pipeline setup"
+          ]
+        },
+        {
+          "title": "Monitoring & Maintenance",
+          "duration": "25 min",
+          "points": [
+            "Error tracking and logging",
+            "Performance monitoring",
+            "User feedback and iteration cycles"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "Module 6",
+      "title": "SaaS Business & Career Growth",
+      "duration": "60 minutes",
+      "topics": [
+        "SaaS Monetization & Features",
+        "Portfolio & Professional Presentation",
+        "Scaling & Future Development"
+      ],
+      "sections": [
+        {
+          "title": "SaaS Monetization & Features",
+          "duration": "20 min",
+          "points": [
+            "Implementing subscription billing",
+            "Feature gating and user limits",
+            "Payment processing with Stripe"
+          ]
+        },
+        {
+          "title": "Portfolio & Professional Presentation",
+          "duration": "20 min",
+          "points": [
+            "Showcasing your full-stack project",
+            "Technical case study creation",
+            "Interview preparation strategies"
+          ]
+        },
+        {
+          "title": "Scaling & Future Development",
+          "duration": "20 min",
+          "points": [
+            "Adapting AI techniques to other frameworks",
+            "Building a sustainable development workflow",
+            "Community building and networking"
+          ]
+        }
+      ]
+    }
+  ],
+  "deliverables": {
+    "primary": "DevTracker - A complete CRUD SaaS application with authentication, database, and payment processing",
+    "secondary": [
+      "Course marketing page (warm-up project)",
+      "Component library and design system"
+    ],
+    "bonus": [
+      "Production deployment checklist",
+      "SaaS starter template repository",
+      "Community Discord access"
+    ],
+    "assessments": "Feature implementation challenges and code reviews"
+  },
+  "learningOutcomes": [
+    "Master AI-assisted development workflows that transfer across tools",
+    "Build and deploy a complete full-stack SaaS application",
+    "Implement authentication, databases, and payment systems",
+    "Develop debugging and problem-solving metaskills with AI",
+    "Create maintainable, scalable production-ready code",
+    "Build a portfolio project that demonstrates real-world SaaS development skills"
+  ],
+  "prerequisites": [
+    "Basic HTML, CSS, and JavaScript knowledge",
+    "Familiarity with text editors and browsers",
+    "No specific AI tool experience required"
+  ]
+}

@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`dark ${spaceGrotesk.variable} ${dmSans.variable}`}>
       <body className="font-sans bg-background text-foreground antialiased">{children}</body>
     </html>
   )
